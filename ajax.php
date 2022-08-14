@@ -88,6 +88,10 @@
             if (sizeof($row_data) == 1){
                 continue;
             }
+            //Skip comments
+            if ($row_data[0] == "#"){
+              continue;
+            }
             $info[$row]['ip'] = $row_data[0];
             $info[$row]['domain'] = $row_data[1];
             //echo '<p class="resolvlist">IP ' . $info[$row]['ip'] . ' resolves as ' . $info[$row]['domain'] . '</p>';
