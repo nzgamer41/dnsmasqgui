@@ -1,6 +1,7 @@
 <?php
   //debugging
-  $fileName = './testdata/hosts';
+  //$fileName = './testdata/hosts';
+  $fileName = '/etc/hosts';
 
   $txt_file = "";
   if (isset($_GET['sendValue'])){
