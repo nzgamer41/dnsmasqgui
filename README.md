@@ -8,6 +8,18 @@ I tested using Apache2 on Windows using Google Chrome 103, but I can't see why i
 
 The only external resource used is a font from Google Fonts for the header.
 
+# WARNING
+In order to add and remove entries to /etc/hosts by default on most Linux operating systems, you will need to change the permissions to allow users other then root to write to the file. By default on Ubuntu, PHP executes scripts as `www-data`, and /etc/hosts is owned by the group `adm` which is used for monitoring, not admin. Do NOT `chown` the file to www-data, as that could have unintended consequences!
+
+I recommend doing the following (at your own risk):
+`$ sudo usermod -aG adm www-data`
+`$ sudo chmod g+w /etc/hosts`
+
+This will add www-data to the adm group, and give the group write ability to hosts.
+
+If you're not comfortable doing this, the GUI will still work for showing you what domains resolve to what IPs in your configuration, it just will be unable to modify anything.
+
+
 ## Features
 - Display all results in the /etc/hosts file
 - Add new results
