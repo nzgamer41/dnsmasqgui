@@ -94,8 +94,13 @@
             }
             $info[$row]['ip'] = $row_data[0];
             $info[$row]['domain'] = $row_data[1];
+            //For safety reasons we probably shouldn't let localhost be deleted
+            if($info[$row]['domain'] == "localhost"){
+              $returndata .= '<p class="resolvlist">IP ' . $info[$row]['ip'] . ' resolves as ' . $info[$row]['domain'] . '</p>';
+            } else {
             //echo '<p class="resolvlist">IP ' . $info[$row]['ip'] . ' resolves as ' . $info[$row]['domain'] . '</p>';
             $returndata .= '<p class="resolvlist">IP ' . $info[$row]['ip'] . ' resolves as ' . $info[$row]['domain'] . '  <button onClick="delList(\'' . $info[$row]['ip'] . ' ' . $info[$row]['domain'] . '\');" type="button">Delete</button></p>';
+            }
         }
         print_r($returndata);
     }else {
