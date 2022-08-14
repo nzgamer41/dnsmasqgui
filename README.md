@@ -28,6 +28,7 @@ If you're not comfortable doing this, the GUI will still work for showing you wh
 ## TODO:
 - Allow editing dnsmasq configuration file, potentially via parsing it into HTML elements but alternatively just a in-browser text editor.
 - Check to make sure the domain doesn't already exist when adding a record
+- Ensure dnsmasq refreshes when a change is made
 
 ## LICENSE
 Please refer to the LICENSE file in the repository.
